@@ -16,11 +16,13 @@ namespace AutoCare.Models
         public DbSet<CheckUps> CheckUps { get; set; }
         public DbSet<CheckUpsServices> CheckUpsServices { get; set; }
         public DbSet<CheckUpsSpareParts> CheckUpsSpareParts { get; set; }
-        public DbSet<Role> Roles { get; set; }
+        //change name of the table for roles
+        public DbSet<Role> roles { get; set; }
         public DbSet<Services> Services { get; set; }
         public DbSet<SpareParts> SpareParts { get; set; }
         public DbSet<Type> Types { get; set; }
-        public DbSet<User> Users { get; set; }
+        //change name of the table for users
+        public DbSet<User> users { get; set; }
         public DbSet<UserAddress> UserAddress { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,10 +42,12 @@ namespace AutoCare.Models
             {
                 builder.HasNoKey();
             });
+            modelBuilder.Entity<CheckUpsViewModel>(builder =>
+            {
+                builder.HasNoKey();
+            });
         }
 
-        public DbSet<AutoCare.ViewModels.RegisterViewModel> RegisterViewModel { get; set; }
-
-        public DbSet<AutoCare.ViewModels.LoginViewModel> LoginViewModel { get; set; }
+        public DbSet<AutoCare.ViewModels.CheckUpsViewModel> CheckUpsViewModel { get; set; }
    }
 }

@@ -1,17 +1,18 @@
 ﻿@model IEnumerable<AutoCare.Models.CheckUps>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "CheckUps List";
 }
-
-<h1>Index</h1>
-
+<h1>CheckUps</h1>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">New Check</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.car)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Counter)
             </th>
@@ -27,12 +28,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.TotalPoints)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.car)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsActive)
-            </th>
+
+            @*delete coloum of IsActive*@
             <th>
                 @Html.DisplayNameFor(model => model.CreateBy)
             </th>
@@ -52,6 +49,9 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.car.CarLetter)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Counter)
             </td>
             <td>
@@ -66,12 +66,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TotalPoints)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.car.CarLetter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsActive)
-            </td>
+
+            @*delete coloum of IsActive*@
             <td>
                 @Html.DisplayFor(modelItem => item.CreateBy)
             </td>
@@ -85,9 +81,9 @@
                 @Html.DisplayFor(modelItem => item.ModifiedOn)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Expand" asp-route-id="@item.Id">Expand</a>
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil"></i>Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete</a>
             </td>
         </tr>
 }

@@ -4,14 +4,16 @@ using AutoCare.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AutoCare.Migrations
 {
     [DbContext(typeof(AutoCareContext))]
-    partial class AutoCareContextModelSnapshot : ModelSnapshot
+    [Migration("20220225042122_TableChangeNameOfTableRolesAndUsers")]
+    partial class TableChangeNameOfTableRolesAndUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -434,29 +436,6 @@ namespace AutoCare.Migrations
                         .HasColumnType("bigint");
 
                     b.ToTable("CarViewModel");
-                });
-
-            modelBuilder.Entity("AutoCare.ViewModels.CheckUpsViewModel", b =>
-                {
-                    b.Property<DateTime>("ArriveDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("CarId")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("Counter")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LeaveDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("TotalCost")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("TotalPoints")
-                        .HasColumnType("int");
-
-                    b.ToTable("CheckUpsViewModel");
                 });
 
             modelBuilder.Entity("AutoCare.ViewModels.LoginViewModel", b =>

@@ -29,7 +29,7 @@ namespace AutoCare.Models.Repository
             {
                 return -1 ;
             }
-            car.IsActive = true;
+            //delete Value of IsActive
             await _AutoCarContext.Cars.AddAsync(car);          
             return await _AutoCarContext.SaveChangesAsync();               
         }
