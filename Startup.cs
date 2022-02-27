@@ -32,7 +32,7 @@ namespace AutoCare
             services.AddIdentity<IdentityUser, IdentityRole>()
                .AddEntityFrameworkStores<AutoCareContext>();
             services.AddScoped<IAutoRepository<Car>, CarRepository>();
-            services.AddScoped<IAutoRepository<User>, UserRepository>();
+          services.AddScoped<IAutoRepository<User>, UsersRepoistory>();
             services.AddScoped<IAutoRepository<Models.Type>, TypesRepository>();
             services.AddScoped<IAutoRepository<CheckUps>, CheckUpsRepoistory>();
             services.AddMvc().AddNToastNotifyToastr(new ToastrOptions() { 

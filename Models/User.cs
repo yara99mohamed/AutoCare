@@ -57,7 +57,7 @@ namespace AutoCare.Models
         public ICollection<UserAddress> address { get; set; }
         public ICollection<Car> car { get; set; }
 
-        public bool IsActive { get; set; }
+        //delete is Active 
         public string CreateBy { get; set; }
         public DateTime CreateOn { get; set; }
         public string ModifiedBy { get; set; }

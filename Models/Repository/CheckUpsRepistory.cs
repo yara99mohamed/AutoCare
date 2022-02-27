@@ -15,7 +15,7 @@ namespace AutoCare.Models.Repository
         }
         public async Task<IEnumerable<CheckUps>> GetAll()
         {
-            return await _AutoCheckUpsContext.CheckUps.ToListAsync();
+            return await _AutoCheckUpsContext.CheckUps.Include(c=>c.car).OrderBy(c=>c.car).ToListAsync();
         }
         public async Task<CheckUps> Get(long? id)
         {

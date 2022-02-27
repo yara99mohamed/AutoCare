@@ -27,7 +27,7 @@ namespace AutoCare.Models.Repository
                 return -1;
 
             }
-            entity.IsActive = true;
+            //delete Value of IsActive
             await _AutoTypeContext.Types.AddAsync(entity);
             return await _AutoTypeContext.SaveChangesAsync();
         }

@@ -42,9 +42,7 @@ else
                 <th>
                     @Html.DisplayNameFor(model => model.UserId)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsActive)
-                </th>
+                    @*delete coloum of IsActive*@
                 <th>
                     @Html.DisplayNameFor(model => model.CreateBy)
                 </th>
@@ -81,21 +79,7 @@ else
                         <td>
                             @Html.DisplayFor(modelItem => item.user.FirstName)
                         </td>
-                        <td>
-                            @if (item.IsActive == true)
-                            {
-                                <label>
-                                    IsActive
-                                </label>
-                            }
-                            else
-                            {
-                                <label>
-                                    NotActive
-                                </label>
-                            }
-
-                        </td>
+                        @*Delete the colom of IsActive*@
                         <td>
                             @Html.DisplayFor(modelItem => item.CreateBy)
                         </td>

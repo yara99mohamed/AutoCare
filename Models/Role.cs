@@ -21,7 +21,7 @@ namespace AutoCare.Models
 
         public ICollection<User> user { get; set; }
 
-        public bool IsActive { get; set; }
+        //delete is Active 
         public string CreateBy { get; set; }
         public DateTime CreateOn { get; set; }
         public string ModifiedBy { get; set; }
