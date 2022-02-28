@@ -1,0 +1,45 @@
+﻿@model ServicesViewModel
+
+@{
+    ViewBag.Title = "Services";
+}
+<h1>Create Service</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Details" class="control-label"></label>
+                <input asp-for="Details" class="form-control" />
+                <span asp-validation-for="Details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceInPoints" class="control-label"></label>
+                <input asp-for="PriceInPoints" class="form-control" />
+                <span asp-validation-for="PriceInPoints" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EarnedPoints" class="control-label"></label>
+                <input asp-for="EarnedPoints" class="form-control" />
+                <span asp-validation-for="EarnedPoints" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check"></i>Save
+                </button>
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-x"></i> Cancel
+                </a>
+            </div>
+        </form>
+
+    </div>
+</div>

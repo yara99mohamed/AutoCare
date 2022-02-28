@@ -23,6 +23,8 @@ namespace AutoCare.Models.Repository
         }
         public async Task<int> Add(Services entity)
         {
+            entity.CreateOn = DateTime.Now; 
+            entity.ModifiedOn = DateTime.Now; 
             await _autoCareContext.Services.AddAsync(entity);
             return await _autoCareContext.SaveChangesAsync();
         }

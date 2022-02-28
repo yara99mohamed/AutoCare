@@ -28,11 +28,13 @@ namespace AutoCare
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<AutoCareContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("AutoCare")));
+            services.AddDbContext<AutoCareContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("AutoCare")));
             services.AddIdentity<IdentityUser, IdentityRole>()
                .AddEntityFrameworkStores<AutoCareContext>();
             services.AddScoped<IAutoRepository<Car>, CarRepository>();
-          services.AddScoped<IAutoRepository<User>, UsersRepoistory>();
+            services.AddScoped<IAutoRepository<User>, UsersRepoistory>();
+            services.AddScoped<IAutoRepository<Services>, ServicesRepository>();
             services.AddScoped<IAutoRepository<Models.Type>, TypesRepository>();
             services.AddScoped<IAutoRepository<CheckUps>, CheckUpsRepoistory>();
             services.AddMvc().AddNToastNotifyToastr(new ToastrOptions() { 
