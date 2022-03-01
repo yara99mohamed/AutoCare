@@ -1,0 +1,44 @@
+﻿@model CheckUpsServicesViewModel
+
+@{
+    ViewBag.Title = "CheckUpsServices";
+}
+<h1>Create CheckUpsServices</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" asp-controller="CheckUpsServices">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class=" form-group">
+                <label asp-for="CheckUpsId" class="control-label"></label>
+                <select asp-for="CheckUpsId" class="form-control" asp-items="@(new SelectList(Model.CheckUps,"Id"))">
+                    <option selected disabled>--Choose Your CheckUp please--</option>
+                </select>
+                <span asp-validation-for="CheckUpsId" class="text-danger"></span>
+            </div>
+
+            <div class=" form-group">
+                <label asp-for="ServicesId" class="control-label"></label>
+                <select asp-for="ServicesId" class="form-control" asp-items="@(new SelectList(Model.Services,"Id"))">
+                    <option selected disabled>--Choose Your Services please--</option>
+                </select>
+                <span asp-validation-for="ServicesId" class="text-danger"></span>
+            </div>
+
+          
+
+           
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check"></i>Save
+                </button>
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-x"></i> Cancel
+                </a>
+            </div>
+        </form>
+
+    </div>
+</div>

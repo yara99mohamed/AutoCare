@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AutoCare.Models.CheckUpsServices>
+@{
+    ViewBag.Title = "CheckUpsServices";
+}
+
+<h4>Welcome To CheckUpsServices Section</h4>
+
+<td><a class="btn btn-info" asp-action="Create" asp-controller="CheckUpsServices" style="margin:10px; width:25% ">Create CheckUpsServices</a></td>
+<table class="table table-bordered table-striped text-center">
+    <tr>
+        <td class="text-center">Id</td>
+        <td class="text-center">CarCheckUps</td>
+        <td class="text-center">CheckUpsId</td>
+        <td class="text-center">CarService</td>
+        <td class="text-center">ServicesId</td>
+        <td class="text-center">Edit</td>
+        <td class="text-center">Delete</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.CarCheckUps</td>
+            <td>@item.CheckUpsId</td>
+            <td>@item.CarService</td>
+            <td>@item.ServicesId</td>
+            <td><a class="btn btn-success" asp-controller="CheckUpsServices" asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+            <td><a class="btn btn-danger" asp-controller="CheckUpsServices" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+
+        </tr>
+    }
+
+</table>
