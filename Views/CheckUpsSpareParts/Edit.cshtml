@@ -1,0 +1,42 @@
+﻿@model CheckUpsSparePartsViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit  Car</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <div class=" form-group">
+                <label asp-for="CheckUpsId" class="control-label"></label>
+                <select asp-for="CheckUpsId" class="form-control" asp-items="@(new SelectList(Model.CheckUps,"Id"))">
+                    <option disabled>--Choose CheckUps Please--</option>
+                </select>
+                <span asp-validation-for="CheckUpsId" class="text-danger"></span>
+            </div>
+
+
+            <div class=" form-group">
+                <label asp-for="SparePartsId" class="control-label"></label>
+                <select asp-for="SparePartsId" class="form-control" asp-items="@(new SelectList(Model.SpareParts,"Id"))">
+                    <option disabled>--Choose Your SpareParts please--</option>
+                </select>
+                <span asp-validation-for="SparePartsId" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <button type="submit" value="Save" class="btn btn-primary"><i class="bi bi-check"></i> Save</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-x"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+

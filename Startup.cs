@@ -36,6 +36,8 @@ namespace AutoCare
             services.AddScoped<IAutoRepository<User>, UsersRepoistory>();
             services.AddScoped<IAutoRepository<Services>, ServicesRepository>();
             services.AddScoped<IAutoRepository<CheckUpsServices>, CheckUpsServicesReposatory>();
+            services.AddScoped<IAutoRepository<CheckUpsSpareParts>, CheckUpsSparePartsReposatory>();
+
             services.AddScoped<IAutoRepository<Models.Type>, TypesRepository>();
             services.AddScoped<IAutoRepository<CheckUps>, CheckUpsRepoistory>();
             services.AddMvc().AddNToastNotifyToastr(new ToastrOptions() { 

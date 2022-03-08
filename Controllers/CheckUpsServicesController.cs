@@ -124,7 +124,7 @@ namespace AutoCare.Controllers
                CheckUpsId = model.CheckUpsId,
                ServicesId = model.ServicesId
             };
-            // ViewBag.id = id;
+
             var result = await _CheckUpsServices.Update(id, checkUpsServices);
             if (result > 0)
             {

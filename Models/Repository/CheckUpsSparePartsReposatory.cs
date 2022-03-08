@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoCare.Models.Repository
 {
-    public class CheckUpsSparePartsReposatory
+    public class CheckUpsSparePartsReposatory : IAutoRepository<CheckUpsSpareParts>
     {
         readonly AutoCareContext _AutoCheckUpsContext;
         public CheckUpsSparePartsReposatory(AutoCareContext context)
